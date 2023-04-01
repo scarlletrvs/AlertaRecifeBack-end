@@ -16,14 +16,14 @@ model Ocorrencia {
   latitude              Decimal
   longitude             Decimal
   dataHora              DateTime @default(now())
-  email                 String   @unique
-  autor                 Usuario  @relation(fields: [email], references: [id])
+  autor                 Usuario  @relation(fields: [autorId], references: [id])
+  autorId               String   
 }
 
 model Usuario {
-  id          String       @id @default(uuid())
+  id          String       @id @default(uuid())  
+  email       String       @unique
   nome        String
-  email       String
   fotoPerfil  String
   Ocorrencias Ocorrencia[]
 }

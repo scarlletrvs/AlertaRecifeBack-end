@@ -1,7 +1,11 @@
 import express from "express"
+import cors from 'cors'
+import morgan from "morgan"
+import { router } from "./route"
 
-const app = express()
+export const app = express()
 
-app.listen(3000,()=>{
-    console.log("rodando na porta 3000")
-})
+app.use(express.json())
+app.use(morgan('dev'))
+app.use(cors())
+app.use(router)
