@@ -5,10 +5,11 @@ export const router = Router()
 
 router.post('/ocorrencia', async (req, res) => {
 
-    const { descricaoDaOcorrencia, latitude, longitude, nome, email, fotoPerfil } = req.body
+    const { descricaoDaOcorrencia, fotoOcorrencia, latitude, longitude, nome, email, fotoPerfil } = req.body
 
     const resultado = await prisma.ocorrencia.create({
         data: {
+            fotoOcorrencia,
             descricaoDaOcorrencia,
             latitude,
             longitude,
@@ -32,6 +33,8 @@ router.post('/ocorrencia', async (req, res) => {
 router.get('/ocorrencias', async (req, res) => {
     const todasOcorrencias = await prisma.ocorrencia.findMany({
         select: {
+            id: true,
+            fotoOcorrencia: true,
             descricaoDaOcorrencia: true,
             latitude: true,
             longitude: true,

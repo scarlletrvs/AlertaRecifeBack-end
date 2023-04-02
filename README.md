@@ -1,6 +1,6 @@
 # API REST Alerta Recife
 
-API Rest simples construida com Typescript, Node.js, Prisma e SQLite
+API Rest simples construida com Typescript, Node.js,Express, Prisma e SQLite
 
 ## Instalação
 
