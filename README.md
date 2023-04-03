@@ -43,6 +43,9 @@ Você pode acessar a API do servidor usando os seguintes endpoints:
 
 - `/ocorrencia`: Registra uma nova ocorrencia.
   - Body:
+  
+    - `fotoDaOcorrencia: Bytes (Opcional)`:Foto do momento da ocorrencia
+    - `TipoDaOcorrencia: String (required)`:Tipo de ocorrencia ex: roubo, batida de carro.. 
     - `descricaoDaOcorrencia: String (required)`:Descrição da ocorrencia que deseja registrar
     - `latitude: Decimal (required)`:Latitude em tempo real de onde ocorreu aproximadamente a ocorrencia.
     - `longitude: Decimal (required)`:Longitude em tempo real de onde ocorreu aproximadamente a ocorrencia

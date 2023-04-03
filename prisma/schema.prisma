@@ -12,8 +12,9 @@ datasource db {
 
 model Ocorrencia {
   id                    String   @id @default(uuid())
+  tipoDaOcorrencia      String 
   descricaoDaOcorrencia String
-  fotoOcorrencia        String?     
+  fotoOcorrencia        Bytes?     
   latitude              Decimal
   longitude             Decimal
   dataHora              DateTime @default(now())
