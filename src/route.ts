@@ -5,12 +5,13 @@ export const router = Router()
 
 router.post('/ocorrencia', async (req, res) => {
 
-    const { descricaoDaOcorrencia, fotoOcorrencia, latitude, longitude, nome, email, fotoPerfil } = req.body
+    const { descricaoDaOcorrencia, fotoOcorrencia, latitude, longitude, nome, email, fotoPerfil,tipoDaOcorrencia } = req.body
 
     const resultado = await prisma.ocorrencia.create({
         data: {
             fotoOcorrencia,
             descricaoDaOcorrencia,
+            tipoDaOcorrencia,
             latitude,
             longitude,
             autor: {
@@ -36,6 +37,7 @@ router.get('/ocorrencias', async (req, res) => {
             id: true,
             fotoOcorrencia: true,
             descricaoDaOcorrencia: true,
+            tipoDaOcorrencia:true,
             latitude: true,
             longitude: true,
             dataHora: true,
