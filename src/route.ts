@@ -3,9 +3,13 @@ import { prisma } from "./prisma";
 
 export const router = Router()
 
+router.get("/", async (req, res) => {
+    res.json("dale mommi")
+})
+
 router.post('/ocorrencia', async (req, res) => {
 
-    const { descricaoDaOcorrencia, fotoOcorrencia, latitude, longitude, nome, email, fotoPerfil,tipoDaOcorrencia } = req.body
+    const { descricaoDaOcorrencia, fotoOcorrencia, latitude, longitude, nome, email, fotoPerfil, tipoDaOcorrencia } = req.body
 
     const resultado = await prisma.ocorrencia.create({
         data: {
@@ -37,7 +41,7 @@ router.get('/ocorrencias', async (req, res) => {
             id: true,
             fotoOcorrencia: true,
             descricaoDaOcorrencia: true,
-            tipoDaOcorrencia:true,
+            tipoDaOcorrencia: true,
             latitude: true,
             longitude: true,
             dataHora: true,
