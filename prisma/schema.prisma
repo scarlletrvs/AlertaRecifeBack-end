@@ -15,8 +15,7 @@ model Ocorrencia {
   tipoDaOcorrencia      String 
   descricaoDaOcorrencia String
   fotoOcorrencia        Bytes?     
-  latitude              Decimal
-  longitude             Decimal
+  enderecoDaOcorrencia  String
   dataHora              DateTime @default(now())
   autor                 Usuario  @relation(fields: [autorId], references: [id])
   autorId               String   
