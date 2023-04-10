@@ -4,8 +4,7 @@ CREATE TABLE "Ocorrencia" (
     "tipoDaOcorrencia" TEXT NOT NULL,
     "descricaoDaOcorrencia" TEXT NOT NULL,
     "fotoOcorrencia" BYTEA,
-    "latitude" DECIMAL(65,30) NOT NULL,
-    "longitude" DECIMAL(65,30) NOT NULL,
+    "enderecoOcorrencia" TEXT NOT NULL,
     "dataHora" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "autorId" TEXT NOT NULL,
 

@@ -4,7 +4,7 @@ import { prisma } from "./prisma";
 export const router = Router()
 
 router.get("/", async (req, res) => {
-    res.json("i knw i am pitbull, but dale mammi")
+    res.json("dale mammi")
 })
 
 router.post('/ocorrencia', async (req, res) => {

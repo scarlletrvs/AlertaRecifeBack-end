@@ -3,7 +3,7 @@
     "sourceMap": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "strict": true,
+    "strict": false,
     "lib": ["esnext"],
     "esModuleInterop": true,
     "declaration": true
