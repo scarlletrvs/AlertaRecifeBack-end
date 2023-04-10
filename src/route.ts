@@ -9,14 +9,14 @@ router.get("/", async (req, res) => {
 
 router.post('/ocorrencia', async (req, res) => {
 
-    const { descricaoDaOcorrencia, fotoOcorrencia, enderecoDaOcorrencia, nome, email, fotoPerfil, tipoDaOcorrencia } = req.body
+    const { descricaoDaOcorrencia, fotoOcorrencia, enderecoOcorrencia, nome, email, fotoPerfil, tipoDaOcorrencia } = req.body
 
     const resultado = await prisma.ocorrencia.create({
         data: {
             fotoOcorrencia,
             descricaoDaOcorrencia,
             tipoDaOcorrencia,
-            enderecoDaOcorrencia,
+            enderecoOcorrencia,
             autor: {
                 connectOrCreate: {
                     where: {
@@ -41,7 +41,7 @@ router.get('/ocorrencias', async (req, res) => {
             fotoOcorrencia: true,
             descricaoDaOcorrencia: true,
             tipoDaOcorrencia: true,
-            enderecoDaOcorrencia: true,
+            enderecoOcorrencia: true,
             dataHora: true,
             autorId: true,
             autor: true,
