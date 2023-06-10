@@ -88,3 +88,19 @@ router.delete("/delete/ocorrencia/:id", async (req, res) => {
 
   res.json(deletarOcorrencia);
 });
+
+router.put("/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  const { descricaoDaOcorrencia } = req.body;
+
+  const editarOcorrencia = await prisma.ocorrencia.update({
+    where: {
+      id,
+    },
+    data: {
+      descricaoDaOcorrencia,
+    },
+  });
+
+  res.json(editarOcorrencia);
+});
